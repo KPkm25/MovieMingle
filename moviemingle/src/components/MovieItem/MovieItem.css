@@ -1,0 +1,17 @@
+.movie-item {
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    color: rgb(255, 255, 255);
+  }
+  
+  .movie-item img {
+    width: 150px;
+    height: 225px;
+    border-radius: 10px;
+  }
+  
+  .movie-item:hover {
+    transform: scale(1.1);
+  }
+  

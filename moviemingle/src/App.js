@@ -20,7 +20,7 @@ const App = () => {
 
   const fetchTrendingMovies = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/trending');
+      const response = await axios.get('https://moviemingle-0p6b.onrender.com/trending');
       setTrendingMovies(response.data);
     } catch (error) {
       console.error('Error fetching trending movies:', error);
@@ -31,7 +31,7 @@ const App = () => {
 
   const fetchRecommendations = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/recommend', {
+      const response = await axios.get('https://moviemingle-0p6b.onrender.com/recommend', {
         params: { movie: searchTerm },
       });
       if (response.status === 429) {
@@ -55,7 +55,7 @@ const App = () => {
   const handleMovieClick = async (movie) => {
     if (!movie.details) {
       try {
-        const response = await axios.get('http://localhost:5000/movie_details', {
+        const response = await axios.get('https://moviemingle-0p6b.onrender.com/movie_details', {
           params: { movie_title: movie.title },
         });
         if (response.status === 429) {

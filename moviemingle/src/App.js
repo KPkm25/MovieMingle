@@ -5,18 +5,17 @@ import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import MovieList from './components/MovieList/MovieList';
 import MovieDetails from './components/MovieDetails/MovieDetails';
-import Header from './components/Header/Header';
+
 
 const App = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
-  const [popularMovies, setPopularMovies] = useState([]);
+ 
   const [searchTerm, setSearchTerm] = useState('');
   const [recommendations, setRecommendations] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
 
   useEffect(() => {
     fetchTrendingMovies();
-    // fetchPopularMovies();
   }, []);
 
   const fetchTrendingMovies = async () => {
@@ -25,19 +24,10 @@ const App = () => {
       setTrendingMovies(response.data);
     } catch (error) {
       console.error('Error fetching trending movies:', error);
-      // toast.error('Error fetching trending movies.');
+      
     }
   };
 
-  // const fetchPopularMovies = async () => {
-  //   try {
-  //     const response = await axios.get('http://localhost:5000/popular');
-  //     setPopularMovies(response.data);
-  //   } catch (error) {
-  //     console.error('Error fetching popular movies:', error);
-  //     toast.error('Error fetching popular movies.');
-  //   }
-  // };
 
   const fetchRecommendations = async () => {
     try {

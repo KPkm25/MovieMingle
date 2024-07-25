@@ -4,3 +4,4 @@ requests==2.26.0
 pickle-mixin==1.0.2
 Werkzeug==2.2.2
 python-dotenv==0.21.0
+pandas==2.0.3
